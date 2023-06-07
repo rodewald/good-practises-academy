@@ -14,5 +14,4 @@ public class OrderItem {
 
     Product product;
     int quantity;
-
 }
