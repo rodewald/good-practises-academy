@@ -3,12 +3,11 @@ package pl.praktycznajava.module2.encapsulation.service;
 import pl.praktycznajava.module2.encapsulation.model.*;
 import pl.praktycznajava.module2.encapsulation.repository.OrderRepository;
 
-import java.math.BigDecimal;
 
 public class OrderService {
 
     OrderRepository orderRepository;
-    DeliveryCostCalculator deliveryCostCalculator;
+
 
     public void changeAddress(String orderId, Address deliveryAddress) {
         Order order = orderRepository.findBy(orderId);

@@ -3,13 +3,11 @@ package pl.praktycznajava.module2.encapsulation.model;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 
 @Getter
-@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor(staticName = "of")
 public class Product {
@@ -19,4 +17,10 @@ public class Product {
     int stockQuantity;
     double weight;
 
+    public void decreaseStockQuantity(int quantity) {
+        if (stockQuantity < quantity) {
+            throw new InsufficientStockException(this, quantity);
+        }
+        stockQuantity = stockQuantity - quantity;
+    }
 }
